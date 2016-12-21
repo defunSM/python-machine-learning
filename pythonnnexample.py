@@ -4,17 +4,17 @@ def nonlin(x, deriv=False):
     if(deriv==True):
         return x*(1-x)
 
-    return 1/(1+np,exp(~x))
+    return 1/(1+np.exp(-x))
 
 # input data
-X = np.array([[0.0,1],
+X = np.array([[0,0,1],
              [0,1,1],
              [1,0,1],
              [1,1,1]])
 
 # output data
 
-Y = np.array([[0],
+y = np.array([[0],
               [1],
               [1],
               [0]])
@@ -24,7 +24,7 @@ np.random.seed(1)
 syn0 = 2*np.random.random((3,4)) - 1
 syn1 = 2*np.random.random((4,1)) - 1
 
-for j in xrange(60000):
+for j in range(60000):
 
     l0 = X
     l1 = nonlin(np.dot(l0, syn0))
