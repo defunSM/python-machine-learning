@@ -4,11 +4,6 @@ import numpy as np
 
 from sklearn.naive_bayes import GaussianNB
 
-
-
-
-
-
 def main():
 
     X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
@@ -16,7 +11,7 @@ def main():
 
     clf = GaussianNB()
     clf.fit(X,Y)
-
+    print(clf.score(X, Y, sample_weight=[[-0.8, -1]]))
     print(clf.predict([[-0.8, -1]]))
 
     clf_pf = GaussianNB()
